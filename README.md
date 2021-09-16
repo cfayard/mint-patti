@@ -1,4 +1,4 @@
-minipatti
+mintpatti
 
 Building:
 
