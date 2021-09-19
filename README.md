@@ -10,6 +10,12 @@
   - Metamask
   - The Graph
 
+Test Credentials:
+
+- Greeter deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+- Account #15: 0xcd3b766ccdd6ae721141f452c550ca635964ce71 (10000 ETH)
+- Private Key: 0x8166f546bab6da521a8369cab06c5d2b9e46670292d85c875ee9ec20e84ffb61
+
 Building:
 
 - A contract for creating and updating a message on the Ethereum blockchain
