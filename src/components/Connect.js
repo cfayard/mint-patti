@@ -9,12 +9,12 @@ const Connect = () => {
   const [greeting, setGreetingValue] = useState();
 
   // request access to the user's MetaMask account
-  async function requestAccount() {
+  const requestAccount = async () => {
     await window.ethereum.request({ method: "eth_requestAccounts" });
-  }
+  };
 
   // call the smart contract, read the current greeting value
-  async function fetchGreeting() {
+  const fetchGreeting = async () => {
     if (typeof window.ethereum !== "undefined") {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const contract = new ethers.Contract(
@@ -29,10 +29,10 @@ const Connect = () => {
         console.log("Error: ", err);
       }
     }
-  }
+  };
 
   // call the smart contract, send an update
-  async function setGreeting() {
+  const setGreeting = async () => {
     if (!greeting) return;
     if (typeof window.ethereum !== "undefined") {
       await requestAccount();
@@ -43,7 +43,7 @@ const Connect = () => {
       await transaction.wait();
       fetchGreeting();
     }
-  }
+  };
 
   return (
     <div>
