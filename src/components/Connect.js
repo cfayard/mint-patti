@@ -7,6 +7,7 @@ const greeterAddress = "0x5fbdb2315678afecb367f032d93f642f64180aa3";
 
 const Connect = () => {
   const [greeting, setGreetingValue] = useState();
+  const [updatedGreeting, setUpdatedGreeting] = useState();
 
   // request access to the user's MetaMask account
   const requestAccount = async () => {
@@ -25,8 +26,9 @@ const Connect = () => {
       try {
         const data = await contract.greet();
         console.log("data: ", data);
+        setUpdatedGreeting(data);
       } catch (err) {
-        console.log("Error: ", err);
+        throw new Error(err);
       }
     }
   };
@@ -48,6 +50,7 @@ const Connect = () => {
   return (
     <div>
       <header className="App-header">
+        <h1>Greeting: {updatedGreeting}</h1>
         <button onClick={fetchGreeting}>Fetch Greeting</button>
         <button onClick={setGreeting}>Set Greeting</button>
         <input
