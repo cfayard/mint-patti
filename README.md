@@ -2,6 +2,14 @@
 
 - Ethereum blockchain research project
 
+- Utilizing:
+  - React
+  - Solidity
+  - Hardhat
+  - ethers.js
+  - Metamask
+  - The Graph
+
 Building:
 
 - A contract for creating and updating a message on the Ethereum blockchain
