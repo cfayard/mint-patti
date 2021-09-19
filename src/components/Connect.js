@@ -48,16 +48,31 @@ const Connect = () => {
   };
 
   return (
-    <div>
-      <header className="App-header">
-        <h1>Greeting: {updatedGreeting}</h1>
-        <button onClick={fetchGreeting}>Fetch Greeting</button>
-        <button onClick={setGreeting}>Set Greeting</button>
+    <div className="flex justify-start items-center flex-col pt-72">
+      <h1 className="text-black text-3xl font-bold mb-10">
+        Greeting: <p className="text-red"> {updatedGreeting}</p>
+      </h1>
+      <div className="flex">
         <input
+          className="shadow-neu-form pl-2 h-8 w-auto flex items-center text-sm rounded focus:outline-none"
           onChange={(e) => setGreetingValue(e.target.value)}
           placeholder="Set greeting"
         />
-      </header>
+        <button
+          className="text-white text-xs px-4 py-2 h-8 w-auto flex justify-center items-center bg-green rounded shadow-neu-button hover:bg-opacity-80 hover:shadow-neu-button foucs:outline-none ml-1.5"
+          onClick={setGreeting}
+        >
+          Set Greeting
+        </button>
+      </div>
+      <div className="flex justify-center items-center flex-row mt-4">
+        <button
+          className="text-white text-xs px-4 py-2 h-8 w-auto flex justify-center items-center bg-orange rounded shadow-neu-button hover:bg-opacity-80 hover:shadow-neu-button foucs:outline-none"
+          onClick={fetchGreeting}
+        >
+          Fetch Greeting
+        </button>
+      </div>
     </div>
   );
 };
